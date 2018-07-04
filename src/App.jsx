@@ -8,10 +8,13 @@ import ErrorMessage from './components/ErrorMessage';
 import Input from './components/Input';
 import RedRamecek from './components/redRamecek';
 import Popup from './components/Terms/Popup';
+import Reservations from './components/Reservations';
+import { fetchReservations } from './store/actions/reservations';
 
 class App extends Component {
   componentDidMount() {
     this.props.handleFetchTerms();
+    this.props.handleFetchReservations();
   }
   render() {
     return (
@@ -23,6 +26,7 @@ class App extends Component {
           />
           <ErrorMessage />
           <Terms />
+          <Reservations />
         </RedRamecek>
         <Popup />
       </div>
@@ -40,6 +44,7 @@ function mapDispatchToProps(dispatch) {
   return {
     handleImportChange: e => dispatch(inputChange(e)),
     handleFetchTerms: () => dispatch(fetchTerms()),
+    handleFetchReservations: () => dispatch(fetchReservations()),
   };
 }
 
