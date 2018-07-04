@@ -29,7 +29,7 @@ export const fetchTerms = () => dispatch => (
       }
       return response.json();
     })
-    .then(data => dispatch(fulfillTerms(data)))
+    .then(payload => dispatch(fulfillTerms(payload)))
     // TODO
     .catch(() => dispatch(errorMessage(/* code, statusMessage */)))
     // TODO ERROR

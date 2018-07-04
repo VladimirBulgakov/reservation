@@ -8,14 +8,14 @@ export default class RedRamecek extends Component {
   render() {
     const myStyle = {
       borderStyle: 'solid',
-      borderColor: this.props.blue ? 'blue' : 'red'
+      borderColor: this.props.blue ? 'blue' : 'red',
     };
 
-    return(
+    return (
       <div style={myStyle}>
         {this.props.children}
       </div>
-    )
+    );
   }
 }
 

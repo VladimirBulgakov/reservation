@@ -7,6 +7,7 @@ import { inputChange } from './store/actions/input';
 import ErrorMessage from './components/ErrorMessage';
 import Input from './components/Input';
 import RedRamecek from './components/redRamecek';
+import Popup from './components/Terms/Popup';
 
 class App extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class App extends Component {
           <ErrorMessage />
           <Terms />
         </RedRamecek>
+        <Popup />
       </div>
     );
   }
@@ -36,9 +38,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleImportChange: (e)=>dispatch(inputChange(e)),
-    handleFetchTerms: ()=>dispatch(fetchTerms()),
-  }
+    handleImportChange: e => dispatch(inputChange(e)),
+    handleFetchTerms: () => dispatch(fetchTerms()),
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
