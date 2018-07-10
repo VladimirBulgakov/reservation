@@ -1,13 +1,23 @@
 import React from 'react';
+import { Table, Button } from 'react-bootstrap';
 
 const Term = props => (
-  <ul styles={{ color: props.isAvailable ? 'black' : 'red' }}>
-    <li>{props.date}</li>
-    <li>{props.date_of_application_end}</li>
-    <li>{props.id}</li>
-    <li>{props.procedure}</li>
-    <li>{props.time}</li>
-  </ul>
+  <Table striped bordered condensed hover>
+    <thead>
+      <tr>
+        <th>Termín masáže {props.id}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>
+        <p>Typ procedůry: č.{props.procedure}</p>
+        <p>Datum a čas objednání: {props.date}, {props.time}</p>
+        <p>
+          <Button bsStyle="success">Zarezervuj</Button>
+        </p>
+      </td>
+    </tbody>
+  </Table>
 );
 
 

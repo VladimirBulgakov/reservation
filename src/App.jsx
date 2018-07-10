@@ -1,9 +1,9 @@
+import { Button } from 'react-bootstrap';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchTerms } from './store/actions/terms';
 import { inputChange } from './store/actions/input';
 import { fetchReservations } from './store/actions/reservations';
-import { Button } from 'react-bootstrap';
 import './App.css';
 import Terms from './components/Terms';
 import ErrorMessage from './components/ErrorMessage';
@@ -11,7 +11,6 @@ import Input from './components/Input';
 import RedRamecek from './components/redRamecek';
 import Popup from './components/Terms/Popup';
 import Reservations from './components/Reservations';
-
 
 class App extends Component {
   componentDidMount() {
