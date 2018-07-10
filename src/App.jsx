@@ -20,11 +20,10 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Terms />
         <RedRamecek blue>
-          <Terms />
           <Reservations />
         </RedRamecek>
-        <Popup />
         <ErrorMessage />
         <Button bsStyle="success">Bootstrap tlacitko</Button>
         <Input
