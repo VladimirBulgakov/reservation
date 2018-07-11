@@ -9,7 +9,7 @@ import Terms from './components/Terms';
 import ErrorMessage from './components/ErrorMessage';
 import Input from './components/Input';
 import RedRamecek from './components/redRamecek';
-import Popup from './components/Terms/Popup';
+import Popupup from './components/Terms/Popup';
 import Reservations from './components/Reservations';
 
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Popupup />
         <Terms />
         <RedRamecek blue>
           <Reservations />
