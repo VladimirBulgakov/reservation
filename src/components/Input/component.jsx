@@ -4,7 +4,7 @@ export default class Input extends Component {
   render() {
     return (
       <div>
-        <input value={this.props.value} onChange={this.props.onChange} type="text" />
+        <input value={this.props.inputValue} onChange={this.props.onChange} type="text" />
       </div>
     );
   }

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 export default class RedRamecek extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const myStyle = {
