@@ -1,8 +1,8 @@
 import React from 'react';
-import { Table, Button } from 'react-bootstrap';
-import Popupup from '../Popup/component';
+import { Table } from 'react-bootstrap';
+import PopupTermReservation from '../PopupTermReservation/component';
 
-const Term = props => (
+export default props => (
   <Table bordered>
     <tbody>
       <tr>
@@ -12,12 +12,9 @@ const Term = props => (
         <td>
           <p>Typ procedůry: č.{props.procedure}</p>
           <p>Datum a čas objednání: {props.date}, {props.time}</p>
-          <Popupup>ahoj</Popupup>
+          <PopupTermReservation />
         </td>
       </tr>
     </tbody>
   </Table>
 );
-
-
-export default Term;

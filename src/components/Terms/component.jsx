@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Term from './Term';
 
-const Terms = props => (
-  props.terms.map((term, i) => <Term key={i} {...term} />)
-);
+export default class Terms extends Component {
+  componentDidMount() {
+    this.props.handleFetchTerms();
+  }
+  render() {
+    return ( 
+      this.props.terms.map((term, i) => <Term key={i} {...term} />)
+    );
+  }
+}
 
-export default Terms;
