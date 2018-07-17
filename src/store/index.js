@@ -11,6 +11,6 @@ export default createStore(
     reservations: { payload: [] },
     input: 'pocatecni stav',
   },
-  
+
   composeEnhancers(applyMiddleware(thunk))
 );

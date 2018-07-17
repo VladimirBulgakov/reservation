@@ -2,7 +2,7 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import { Button } from 'react-bootstrap';
 
-const PopupTermReservation = props => (
+const PopupTermReservation = () => (
   <Popup trigger={<Button bsStyle="success" bsSize="small">Zarezervuj</Button>} position="right center">
     <div>
       <div>Rezervace termínu.</div>

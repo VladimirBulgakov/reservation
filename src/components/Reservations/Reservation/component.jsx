@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const Reservation = props => (
   <ul styles={{ color: props.isAvailable ? 'black' : 'red' }}>
@@ -10,3 +12,11 @@ const Reservation = props => (
 );
 
 export default Reservation;
+
+Reservation.propTypes = {
+  isAvailable: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
+  person_count: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+};
