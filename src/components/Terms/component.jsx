@@ -8,15 +8,12 @@ export default class Terms extends Component {
   }
   render() {
     return (
-      this.props.terms.map(term => <Term key={this.props.id} {...term} />)
+      this.props.terms.map((term, i) => <Term key={i} {...term} />)
     );
   }
 }
 
 Terms.propTypes = {
   handleFetchTerms: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
-  terms: PropTypes.objectOf(PropTypes.array).isRequired,
-  // terms: PropTypes.arrayOf(function(propValue, key, Term, location, propFullName)
-  // terms: PropTypes.any.isRequired,
+  terms: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

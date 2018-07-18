@@ -1,8 +1,9 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import PopupTermReservation from '../PopupTermReservation/component';
 
-export default props => (
+const Term = props => (
   <Table bordered>
     <tbody>
       <tr>
@@ -18,3 +19,12 @@ export default props => (
     </tbody>
   </Table>
 );
+
+export default Term;
+
+Term.propTypes = {
+  procedure: PropTypes.number.isRequired,
+  date: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
