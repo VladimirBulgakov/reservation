@@ -8,10 +8,15 @@ export default class Terms extends Component {
   }
   render() {
     return (
-      this.props.terms.map((term, i) => <Term key={i} {...term} />)
+      this.props.terms.map(term => (<Term
+        key={term.id}
+        {...term}
+        // isAvilible={this.isAvailable(this.props.date_of_application_end, Date.now())}
+      />))
     );
   }
 }
+
 
 Terms.propTypes = {
   handleFetchTerms: PropTypes.func.isRequired,

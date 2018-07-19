@@ -8,7 +8,10 @@ export default class Reservations extends Component {
   }
   render() {
     return (
-      this.props.reservations.map((reservation, i) => <Reservation key={i} {...reservation} />)
+      this.props.reservations.map(reservation => (<Reservation
+        key={reservation.id}
+        {...reservation}
+      />))
     );
   }
 }
