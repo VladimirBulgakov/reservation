@@ -1,6 +1,5 @@
 import { FULFILL_TERMS, REQUEST_TERMS } from '../actions/terms';
 
-
 export default function terms(state = {}, action) {
   switch (action.type) {
     case FULFILL_TERMS:
