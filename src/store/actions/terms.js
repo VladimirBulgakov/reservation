@@ -12,6 +12,7 @@ export const fulfillTerms = payload => ({
   payload,
 });
 
+
 export const fetchTerms = () => dispatch => (
   fetch(
     'http://private-921ac-taskapi3.apiary-mock.com/date/',
@@ -29,8 +30,8 @@ export const fetchTerms = () => dispatch => (
       }
       return response.json();
     })
-    .then(payload => dispatch(fulfillTerms(payload)))
+    .then(data => dispatch(fulfillTerms(data)))
     // TODO
-    .catch(() => dispatch(errorMessage(/* code, statusMessage */)))
+    .catch(data => dispatch(errorMessage(data)))
     // TODO ERROR
 );

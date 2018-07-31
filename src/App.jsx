@@ -6,7 +6,7 @@ import ErrorMessage from './components/ErrorMessage';
 import Input from './components/Input';
 
 
-const App = () => (
+const App = ({errors}) => (
   <div>
     <Terms />
     <ErrorMessage />

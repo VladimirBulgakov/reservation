@@ -1,9 +1,16 @@
 import { connect } from 'react-redux';
 import ErrorMessage from './component';
+import { errorMessage } from '../../store/actions/errorMessage';
 
 const mapStateToProps = state => ({
-  statusMessage: state.error.statusMessage,
+  errorZprava: state.error.errorZprava,
   code: state.error.code,
 });
 
-export default connect(mapStateToProps)(ErrorMessage);
+function mapDispatchToProps(dispatch) {
+  return {
+    handleErrorMessage: () => dispatch(errorMessage()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ErrorMessage);

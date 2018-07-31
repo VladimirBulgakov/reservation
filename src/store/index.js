@@ -10,7 +10,9 @@ export default createStore(
     terms: { payload: [] },
     reservations: { payload: [] },
     input: 'pocatecni stav',
+    error: { errorZprava: 'zadnej error' },
   },
 
-  composeEnhancers(applyMiddleware(thunk))
+  composeEnhancers(applyMiddleware(thunk)),
 );
+
