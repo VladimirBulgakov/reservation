@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class ErrorMessage extends Component {
-  render() {
-    if (this.props.errorZprava === 'mame tu error') {
-      return <h2>mame errora</h2>;
-    }
-      return <h2>nemame errora</h2>;
+const ErrorMessage = (props) => {
+  if (props.errorZprava === 'mame tu error') {
+    return <h2>mame error</h2>;
   }
-}
+  return <h2>nemame error</h2>;
+};
+
+export default ErrorMessage;
+
+ErrorMessage.propTypes = {
+  errorZprava: PropTypes.string.isRequired,
+};

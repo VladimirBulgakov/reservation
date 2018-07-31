@@ -15,7 +15,7 @@ export const fulfillTerms = payload => ({
 
 export const fetchTerms = () => dispatch => (
   fetch(
-    'http://private-921ac-taskapi3.apiary-mock.com/date/',
+    'http://private-921ac-taskapi3.apiarchybay-mock.com/date/',
     {
       method: 'get',
       mode: 'cors',
