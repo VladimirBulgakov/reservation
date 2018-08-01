@@ -15,7 +15,7 @@ export const fulfillTerms = payload => ({
 
 export const fetchTerms = () => dispatch => (
   fetch(
-    'http://private-921ac-taskapi3.apiarchybay-mock.com/date/',
+    'http://private-921ac-taskapi3.apiary-mock.com/date/chyba',
     {
       method: 'get',
       mode: 'cors',
@@ -25,13 +25,14 @@ export const fetchTerms = () => dispatch => (
     },
   )
     .then((response) => {
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
-      return response.json();
+      return (
+        console.log({ response }),
+        response.json()
+      );
     })
     .then(data => dispatch(fulfillTerms(data)))
-    // TODO
-    .catch(data => dispatch(errorMessage(data)))
-    // TODO ERROR
+    .catch((err) => {
+      dispatch(errorMessage(err.message));
+      console.log({ err });
+    })
 );

@@ -16,7 +16,7 @@ export const fetchReservations = () => dispatch => (
   fetch(
     'http://private-921ac-taskapi3.apiary-mock.com/reservation/',
     {
-      method: 'get',
+      method: 'post',
       mode: 'cors',
       headers: {
         'Access-Control-Allow-Origin': '*',
