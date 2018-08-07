@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Reservations from './component';
-import { fetchReservations } from '../../store/actions/reservations';
+import { postReservation } from '../../store/actions/reservations';
 
 const mapStateToProps = state => ({
   reservations: state.reservations.payload,
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 
 function mapDispatchToProps(dispatch) {
   return {
-    handleFetchReservations: () => dispatch(fetchReservations()),
+    handlePostReservations: () => dispatch(postReservation()),
   };
 }
 

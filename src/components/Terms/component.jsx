@@ -8,6 +8,7 @@ export default class Terms extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (this.props.terms.map((term) => {
       if (new Date(term.date_of_application_end) >= new Date()) {
         return <Term key={term.id} {...term} />;

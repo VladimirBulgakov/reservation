@@ -8,7 +8,7 @@ export default createStore(
   reducers,
   {
     terms: { payload: [] },
-    reservations: { payload: [] },
+    reservations: { reservations: [] },
     input: 'initial state',
     error: { errorMessage: 'no error' },
   },

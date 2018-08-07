@@ -1,36 +1,30 @@
 import { errorMessage } from './errorMessage';
 
-export const REQUEST_RESERVATIONS = 'REQUEST_RESERVATIONS';
-export const FULFILL_RESERVATIONS = 'FULFILL_RESERVATIONS';
+export const REQUEST_POST_RESERVATIONS = 'REQUEST_POST_RESERVATIONS';
+export const POST_RESERVATION = 'POST_RESERVATION';
 
-export const requestResevations = () => ({
-  type: REQUEST_RESERVATIONS,
+export const requestPostResevations = () => ({
+  type: REQUEST_POST_RESERVATIONS,
 });
 
-export const fulfillReservations = payload => ({
-  type: FULFILL_RESERVATIONS,
-  payload,
+export const fullfillReservation = newResevation => ({
+  type: POST_RESERVATION,
+  newResevation,
 });
 
-export const fetchReservations = () => dispatch => (
+const reservationsApi = 'http://private-921ac-taskapi3.apiary-mock.com/reservation/';
+
+export const postReservation = () => dispatch => (
   fetch(
-    'http://private-921ac-taskapi3.apiary-mock.com/reservation/',
+    reservationsApi,
     {
       method: 'post',
-      mode: 'cors',
+      body: JSON.stringify(dispatch),
       headers: {
-        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
       },
     },
   )
-    .then((response) => {
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
-      return response.json();
-    })
-    .then(payload => dispatch(fulfillReservations(payload)))
-    // TODO
-    .catch(() => dispatch(errorMessage(/* code, statusMessage */)))
-    // TODO ERROR
+    .then(data => dispatch(fullfillReservation(data)))
 );
+

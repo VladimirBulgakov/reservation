@@ -12,10 +12,11 @@ export const fulfillTerms = payload => ({
   payload,
 });
 
+const termsApi = 'http://private-921ac-taskapi3.apiary-mock.com/date/';
 
 export const fetchTerms = () => dispatch => (
   fetch(
-    'http://private-921ac-taskapi3.apiary-mock.com/date/chyba',
+    termsApi,
     {
       method: 'get',
       mode: 'cors',
@@ -24,12 +25,7 @@ export const fetchTerms = () => dispatch => (
       },
     },
   )
-    .then((response) => {
-      return (
-        console.log({ response }),
-        response.json()
-      );
-    })
+    .then(response => response.json())
     .then(data => dispatch(fulfillTerms(data)))
     .catch((err) => {
       dispatch(errorMessage(err.message));
